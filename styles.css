@@ -1,0 +1,126 @@
+@font-face {
+    font-family: "Franklin Bold";
+    src: url(fonts/franklin_gothic_bold.ttf);
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+h1, h2 {
+    font-family:"Franklin Bold";
+    font-size: 5em;
+    
+}
+header, footer {
+    padding: 20px;
+    text-align: center;
+}
+section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+#main-nav.hidden-nav {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+#main-nav {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000; /* To ensure it appears above all other content */
+    animation: slideUp 2s forwards 2s; /* 2 seconds of holding, then 2 seconds of sliding */
+
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #555; /* Change as needed */
+}
+
+
+#header-logo {
+    width: 150px;
+    height: auto;
+}
+#main-nav:not(.hidden-nav) + #header-logo {
+    margin-left: 20px; /* Adjust as needed */
+}
+
+
+.about, .services, .contact {
+    margin: 20px 0;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+}
+
+/* ... Your existing styles ... */
+
+#logo-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #333;
+}
+header img {
+    transition: all 1s ease-out; /* Adjusts the position smoothly */
+}
+
+@keyframes slideUp {
+    0% {
+        top: 0;
+        height: 100vh;
+    }
+    100% {
+        top: 0;
+        height: 12%; /* Assuming this as the height of your header */
+    }
+}
+
+header #header-logo{
+    max-width: 100%; /* Adjust as needed */
+    transition: all 1s; /* This makes the logo shrink smoothly */
+}
+
+#logo-intro header {
+    max-width: 100%; /* Adjust this size for the full-screen appearance */
+}
