@@ -1,126 +1,566 @@
 @font-face {
     font-family: "Franklin Bold";
     src: url(fonts/franklin_gothic_bold.ttf);
-  }
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-}
-h1, h2 {
-    font-family:"Franklin Bold";
-    font-size: 5em;
-    
-}
-header, footer {
-    padding: 20px;
-    text-align: center;
-}
-section {
-    height: 100vh;
-    width: 100%;
-    scroll-snap-align: start;
 }
 
-#main-nav.hidden-nav {
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 0.5s, transform 0.5s;
-}
-#main-nav {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 0.5s, transform 0.5s;
+@font-face {
+    font-family: "Merchant Copy";
+    src: url(fonts/Merchant\ Copy.ttf);
 }
 
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    z-index: 1000; /* To ensure it appears above all other content */
-    animation: slideUp 2s forwards 2s; /* 2 seconds of holding, then 2 seconds of sliding */
-
-}
-
-nav {
-    margin-left: auto;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #555; /* Change as needed */
-}
-
-
-#header-logo {
-    width: 150px;
-    height: auto;
-}
-#main-nav:not(.hidden-nav) + #header-logo {
-    margin-left: 20px; /* Adjust as needed */
-}
-
-
-.about, .services, .contact {
-    margin: 20px 0;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    height: 100vh;
-    width: 100%;
-}
-
-/* ... Your existing styles ... */
-
-#logo-intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: #333;
-}
-header img {
-    transition: all 1s ease-out; /* Adjusts the position smoothly */
-}
 
 @keyframes slideUp {
     0% {
         top: 0;
         height: 100vh;
     }
+
     100% {
         top: 0;
-        height: 12%; /* Assuming this as the height of your header */
+        display: none;
+        /* Assuming this as the height of your header */
     }
 }
 
-header #header-logo{
-    max-width: 100%; /* Adjust as needed */
-    transition: all 1s; /* This makes the logo shrink smoothly */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes logo-intro {
+    0% {}
+
+    5% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    25% {
+
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    35% {
+        width: 150px;
+        height: auto;
+        opacity: 0;
+    }
+
+
+
+    100% {
+        transition: 0.5s;
+        display: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Merchant Copy";
+    font-size: x-large;
+    text-transform: uppercase;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    color: white;
+    background-color: #55f040;
+}
+
+h1,
+h2 {
+    font-family: "Franklin Bold";
+    font-size: 5vw;
+
+}
+
+header,
+footer {
+    padding: 25px;
+    text-align: center;
+}
+
+section {
+    min-height: auto;
+    width: 100%;
+    scroll-snap-align: start;
+    animation: slideUp-section 2s forwards 2s;
+    padding: 2%;
+    color: black;
+    box-sizing: border-box;
+    background-color: #55f040;
+}
+
+#logo-intro {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #55f040;
+    /* Assuming white as the background color */
+    z-index: 1000;
+    /* To ensure it appears above all other content */
+    animation: slideUp 2s forwards 2s;
+    /* 2 seconds of holding, then 2 seconds of sliding */
+
+}
+
+header img {
+    transition: all 1s ease-out;
+    /* Adjusts the position smoothly */
+}
+
+header #header-logo {
+    max-width: 100%;
+    /* Adjust as needed */
+    transition: all 1s;
+    /* This makes the logo shrink smoothly */
 }
 
 #logo-intro header {
-    max-width: 100%; /* Adjust this size for the full-screen appearance */
+    max-width: 100%;
+    /* Adjust this size for the full-screen appearance */
+}
+
+header {
+    height: auto;
+    width: 100%;
+    align-items: center;
+    /* Center items vertically */
+    gap: 10px;
+    /* Space between grid items */
+    padding: 25px;
+    /* Header padding */
+    background-color: #55f040;
+    line-height: 1;
+    box-sizing: border-box;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 12-column grid */
+    grid-template-rows: auto;
+    gap: 10px;
+    text-align: left;
+    color: black;
+    transition: 1s;
+    /* Adjust to match your design */
+}
+
+.main-title {
+    grid-column: 1 / 10;
+    /* Adjust based on your design */
+    grid-row: 1;
+    font-family: "Franklin Bold", sans-serif;
+    font-size: 5vw;
+    animation: slideInLeft 2s forwards 2s;
+    /* Adjust to match your design */
+    /* Additional styling */
+}
+
+#social {
+    grid-column: 12 / 13;
+    grid-row: 1;
+    font-family: "Merchant Copy";
+    font-size: 2vw;
+    text-transform: uppercase;
+    line-height: 1.6;
+    animation: slideInDown 3s forwards 2s;
+
+}
+
+#social a {
+    color: black;
+    text-decoration: none;
+}
+
+#social a:hover {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#aframe {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+
+.sub-title {
+    grid-column: 5 / 13;
+    /* Adjust based on your design */
+    grid-row: 2;
+    font-family: "Franklin Bold", sans-serif;
+    font-size: 5vw;
+    animation: slideInRight 2.5s forwards 2s;
+    /* Adjust to match your design */
+    /* Additional styling */
+}
+
+.tagline {
+    grid-column: 1 / 13;
+    /* Span across all columns */
+    grid-row: 3;
+    font-family: "Merchant Copy", sans-serif;
+    /* This should match the font in your design */
+    font-size: 5vw;
+    animation: slideInLeft 3s forwards 2s;
+    /* Adjust to match your design */
+    /* Additional styling */
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: #55f040;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* To stack sentences and navigation bar */
+    font-family: "Franklin Bold";
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+#navbar a:hover {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#navbar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+#quote-container {
+    /* Adjust the styling as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Full screen height */
+    text-align: center;
+    font-size: 3vw;
+    /* Large text size for quotes */
+    font-family: "Franklin Bold";
+    /* Text color */
+    color: black;
+    /* Background color */
+    /* Smooth transition for opacity */
+    opacity: 1;
+    /* Start fully visible */
+    padding: 5%;
+    background-color: #55f040;
+    box-sizing: border-box;
+}
+
+#whats-happening {
+    /* or any other color you prefer */
+    padding: 20px;
+    text-align: center;
+    /* Center the heading */
+}
+
+#whats-happening h2 {
+    font-size: 4vw;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center tags */
+    gap: 10px;
+    /* Space between tags */
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: black 3px solid;
+    /* White background for tags */
+    border-radius: 25px;
+    /* Rounded corners for tags */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Soft shadow for depth */
+    font-weight: bold;
+    cursor: pointer;
+    /* Indicates the tag is clickable */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition for hover effects */
+}
+
+.tag:hover {
+    background-color: black;
+    /* Light grey background on hover */
+    color: white;
+    transform: scale(1.1);
+    /* Slightly larger on hover */
+}
+
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+
+#header-logo {
+    width: 150px;
+    height: auto;
+    transition: all 1s ease-out;
+    /* Adjusts the position smoothly */
+    animation-name: logo-intro;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+#nav-logo {
+    width: 80px;
+    height: auto;
+    /* Adjusts the position smoothly */
+    /* 2 seconds of holding, then 2 seconds of sliding */
+}
+
+a-scene {
+    height: 300px;
+    width: 600px;
+    z-index: 1000;
+    animation: fadeIn 2s forwards 2s;
+}
+#submitButton {
+    display: none; /* Start as hidden */
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    background-color: #55f040;
+    transition: display 0.5s ease; /* Smooth transition for showing the button */
+    font-family: "Merchant Copy";
+    font-size: 2vw;
+    border: none;
+    border-radius: 25px;
+    transition: 1s;
+}
+#submitButton:hover {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+
+.about,
+.contact,
+footer {
+    background-color: #55f040;
+}
+
+footer {
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    
+}
+
+input[type="email"] {
+    border: none;
+    outline: none;
+    background-color: #55f040;
+    font-family: "Merchant Copy";
+    color: black;
+    font-size: x-large;
+}
+
+.footer-top input[type="email"] {
+    margin-left: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    margin: 0;
+}
+
+.footer-bottom {
+    font-size: 1.5vw;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1360px) {
+    #navbar a {
+        font-size: 3vw;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .main-title,
+    .sub-title,
+    .tagline {
+        grid-column: 1;
+    }
+    .main-title {
+        grid-row: 1;
+    }
+    .sub-title {
+        grid-row: 2;
+    }
+    .tagline {
+        grid-row: 3;
+    }
+    #aframe {
+        grid-column: 12 / 13;
+    }
+    #social {
+        font-size: 3vw;
+    }
+
+    #whats-happening {
+        /* or any other color you prefer */
+        padding-top: 2em;
+        /* Center the heading */
+    }
+
+    #logo {
+        width: 150px;
+    }
+
+    #submitButton {
+        font-size: 6vw;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 5vw;
+    }
+    .footer-bottom {
+        font-size: 3.5vw;
+    }
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
 }
