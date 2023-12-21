@@ -29,9 +29,12 @@
 
     <footer>
         <div class="footer-top">
-            JOIN THE CLUB, SUBSCRIBE TO OUR NEWSLETTER: <input type="email" placeholder="ENTER YOUR EMAIL">
+            JOIN THE CLUB, SUBSCRIBE TO OUR NEWSLETTER:
+            <input type="email" id="emailInput" placeholder="ENTER YOUR EMAIL">
+            <a><button id="submitButton" style="display: none;">Subscribe</button></a>
         </div>
-        <img src="img/sundays_logo.png" alt="SUNDAYS logo" width="300">
+        
+        <img id="logo" src="img/sundays_logo.png" alt="SUNDAYS logo" width="300">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>VISIT US:</h3>
@@ -48,74 +51,9 @@
             </div>
         </div>
         <div class="footer-bottom">
-            FAQ, Returns & Exchanges, Terms of Service, Contact
+            © 2023 Sundays LLC
         </div>
     </footer>
-
-
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // After the logo animation is done, hide the element
-            setTimeout(() => {
-                var headerLogo = document.getElementById('header-logo');
-                if (headerLogo) {
-                    headerLogo.style.display = 'none';
-                }
-                var intro = document.getElementById('logo-intro');
-                if (intro) {
-                    intro.style.display = 'none';
-                }
-            }, 2000); // This timeout should match the duration of the logo-intro animation
-
-            // Sticky Navbar Logic
-            // When the user scrolls the page, execute myFunction
-            window.onscroll = function () { myFunction() };
-
-            // Get the navbar
-            var navbar = document.getElementById("navbar");
-
-            // Get the offset position of the navbar
-            var sticky = navbar.offsetTop;
-
-            // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-            function myFunction() {
-                if (window.pageYOffset >= sticky) {
-                    navbar.classList.add("sticky")
-                } else {
-                    navbar.classList.remove("sticky");
-                }
-            }
-
-            const quotes = [
-                "I don’t buy out the bar, I bought the night spot, I got the right stock, I got stockbrokers that’s movin’ it like white tops … – Jay Z",
-                "Own boss, own your masters, slaves, the mentality I carry with me to this very day, fuck rich, let’s get wealthy, who else gon’ feed we? – Jay Z",
-                "… I can’t help the poor if I’m one of them, so I got rich and gave back, to me, that’s the win-win … – Jay Z",
-                "We on our own, stop sittin’ around waitin’ for folks to throw you a bone, if you can’t buy the building at least stock the shelf, then keep on stackin’ ’til you stockin’ for yourself … – Jay Z",
-                // Add more quotes as desired
-            ];
-
-            // Function to get a random quote
-            function getRandomQuote() {
-                return quotes[Math.floor(Math.random() * quotes.length)];
-            }
-
-            // Set a random quote to the quote container
-            const quoteContainer = document.getElementById('quote');
-    quoteContainer.textContent = getRandomQuote();
-
-            // Logic to fade out the quote container after a set time
-            setTimeout(() => {
-                document.getElementById('quote-container').style.opacity = '0';
-                // Optional: hide the container after the fade out
-                setTimeout(() => {
-                    document.getElementById('quote-container').style.display = 'none';
-                }, 2000); // This should be the same as the transition time in the CSS
-            }, 2000); // Time before the quote fades out
-        });
-
-    </script>
 
 </body>
 
