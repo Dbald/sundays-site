@@ -579,7 +579,7 @@ input[type="email"] {
     #mobile_social {
         grid-row: 2;
         grid-column: 1;
-        font-size: 5vw;
+        font-size: 3vw;
         text-decoration: none;
         color: black;
         animation: slideInRight 2.5s forwards 2s;
@@ -590,7 +590,7 @@ input[type="email"] {
     }
     .mobile-title {
         grid-row: 3;
-        font-size: 8vw;
+        font-size: 11vw;
         animation: slideInRight 2.5s forwards 2s;
     }
     .mobile_tagline {
