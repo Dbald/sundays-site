@@ -590,15 +590,16 @@ input[type="email"] {
     }
     .mobile-title {
         grid-row: 3;
-        font-size: 11vw;
+        font-size: 11.5vw;
         animation: slideInRight 2.5s forwards 2s;
     }
     .mobile_tagline {
         grid-row: 4;
-        font-size: 8vw;
+        font-size: 11.5vw;
         text-align: left ;
         color: black;
         animation: slideInLeft 3s forwards 2s;
+        li
     }
     
 
