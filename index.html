@@ -12,33 +12,22 @@
 </head>
 
 <body>
-
-
-    
         <div id="quote-container">
             <p id="quote"></p>
         </div>
-
-
-
-
-
-  
     <header>
         <div class="grid-container">
-            <div class="main-title">Sundays is a creative</div><span id="social"><a
+            <div class="main-title"><span id="sundays">Sundays</span> is a creative</div><span id="social"><a
                     href="https://www.instagram.com/sipsundayscoffee/">@sipsundayscoffee</a></span>
-            <a-scene id="aframe" embedded vr-mode-ui="enabled: false">
-                <a-assets>
-                    <a-assets-item id="logo_s" src="./assets/logo_w_com.gltf"></a-assets-item>
-                </a-assets>
-                <a-entity camera="fov: 55" position="0 1.6 0" rotation="" look-controls="enabled: false"
-                    aframe-injected="" data-aframe-inspector-original-camera="" scale="0.99 1 1"></a-entity>
-                <a-gltf-model position="0 1.6 -0.5" src="#logo_s"
-                    animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 10000; easing: linear; loop: true"></a-gltf-model>
-            </a-scene>
             <div class="sub-title">suite that combines culture with the business of selling.</div>
             <div class="tagline">For those who are ambitious.</div>
+            <span id="mobile_sundays">Sundays</span>
+            <span id="mobile_social"><a
+                href="https://www.instagram.com/sipsundayscoffee/">@sipsundayscoffee</a></span>
+            <div class="mobile-title">
+                is a creative suite that combines culture with the business of selling.</div>
+            </div>
+            <div class="mobile_tagline">For those who are ambitious.</div>
             <!-- ... rest of your header content ... -->
         </div>
         <!-- ... rest of your header content ... -->
@@ -49,40 +38,39 @@
         <a href="/contact.html">Contact Us</a>
     </div>
     <section class="about" id="whats-happening">
-        <h2>What's Happening?</h2>
+        <!-- <h2>What's Happening?</h2>
         <div class="tags">
             <span class="tag">SUNDAYS COFFEE</span>
             <span class="tag">HONEY + BRIE</span>
             <span class="tag">CHATEAU</span>
-            <!-- Add more spans for each tag -->
-        </div>
+        </div> -->
     </section>
 
     <footer>
         <div class="footer-top">
             JOIN THE CLUB, SUBSCRIBE TO OUR NEWSLETTER:
             <input type="email" id="emailInput" placeholder="ENTER YOUR EMAIL">
-            <a><button id="submitButton" style="display: none;">Subscribe</button></a>
+            <a><button id="submitButton" style="display: none;">SUBSCRIBE</button></a>
         </div>
         
-        <img id="logo" src="img/sundays_logo.png" alt="SUNDAYS logo" width="300">
+        <h1 id="logo">SUNDAYS.LLC</h1>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>VISIT US:</h3>
-                <p>3054 S Victoria Ave.<br>Los Angeles, CA 90016</p>
+                <p class="footer_text">3054 S Victoria Ave.<br>Los Angeles, CA 90016</p>
             </div>
             <div class="footer-section">
                 <h3>CONTACT US:</h3>
-                <a href="mailto:info@sundays.com">info@sundays.com</a><br>
-                Phone: +123-456-7890
+                <a id="email" href="mailto:info@sundays.com">info@sundays.com</a><br>
+                <p class="footer_text">Phone: +123-456-7890</p>
             </div>
             <div class="footer-section">
                 <h3>FOLLOW US:</h3>
-                <p>Instagram, TikTok,<br>Twitter, Facebook, Pinterest</p>
+                <p class="footer_text">Instagram, TikTok,<br>Twitter, Facebook, Pinterest</p>
             </div>
         </div>
         <div class="footer-bottom">
-            © 2023 Sundays LLC
+            <p class="footer_text">© 2023 Sundays LLC</p>
         </div>
     </footer>
 

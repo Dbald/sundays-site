@@ -124,7 +124,7 @@ html {
 }
 
 body {
-    font-family: "Merchant Copy";
+    font-family: "Franklin Bold";
     font-size: x-large;
     text-transform: uppercase;
     line-height: 1.6;
@@ -140,7 +140,7 @@ body {
 h1,
 h2 {
     font-family: "Franklin Bold";
-    font-size: 5vw;
+    font-size: 6vw;
 
 }
 
@@ -234,8 +234,7 @@ header {
 #social {
     grid-column: 12 / 13;
     grid-row: 1;
-    font-family: "Merchant Copy";
-    font-size: 2vw;
+    font-size: 1vw;
     text-transform: uppercase;
     line-height: 1.6;
     animation: slideInDown 3s forwards 2s;
@@ -260,7 +259,7 @@ header {
 }
 
 .sub-title {
-    grid-column: 5 / 13;
+    grid-column: 1 / 13;
     /* Adjust based on your design */
     grid-row: 2;
     font-family: "Franklin Bold", sans-serif;
@@ -274,12 +273,18 @@ header {
     grid-column: 1 / 13;
     /* Span across all columns */
     grid-row: 3;
-    font-family: "Merchant Copy", sans-serif;
     /* This should match the font in your design */
     font-size: 5vw;
     animation: slideInLeft 3s forwards 2s;
     /* Adjust to match your design */
     /* Additional styling */
+}
+
+.mobile-title,
+.mobile_tagline,
+#mobile_sundays,
+#mobile_social {
+    display: none;
 }
 
 #navbar {
@@ -294,7 +299,19 @@ header {
     width: 100%;
     transition: all 0.5s ease;
 }
-
+#contact_navbar {
+    overflow: hidden;
+    background-color: #55f040;
+    z-index: 1000;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-evenly;
+    /* To stack sentences and navigation bar */
+    font-family: "Franklin Bold";
+    width: 100%;
+    transition: all 0.5s ease;
+}
 #navbar a {
     float: left;
     display: block;
@@ -304,8 +321,18 @@ header {
     text-decoration: none;
     font-size: 1.5vw;
 }
+#contact_navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
 
-#navbar a:hover {
+#navbar a:hover,
+#contact_navbar a:hover {
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -392,7 +419,19 @@ header {
     width: 100%;
 }
 
-
+#logo {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 7vw;
+}
+#email {
+    text-decoration: none;
+    color: black;
+}
+.footer_text, #email {
+    font-size: 1vw;
+}
 
 #header-logo {
     width: 150px;
@@ -425,8 +464,8 @@ a-scene {
     padding: 5px;
     background-color: #55f040;
     transition: display 0.5s ease; /* Smooth transition for showing the button */
-    font-family: "Merchant Copy";
-    font-size: 2vw;
+    font-family: "Franklin Bold";
+    font-size: 1.5vw;
     border: none;
     border-radius: 25px;
     transition: 1s;
@@ -457,8 +496,6 @@ footer {
     flex-direction: row;
     justify-content: center;
     border-bottom: 1px solid black;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
     
 }
 
@@ -468,7 +505,7 @@ input[type="email"] {
     background-color: #55f040;
     font-family: "Merchant Copy";
     color: black;
-    font-size: x-large;
+    font-size: 2vw;
 }
 
 .footer-top input[type="email"] {
@@ -502,32 +539,68 @@ input[type="email"] {
     #navbar a {
         font-size: 3vw;
     }
-
+    #contact_navbar a {
+        font-size: 3vw;
+    }
+    h2 {
+        font-size: 10vw;
+    }
+    h3 {
+        font-size: 8vw;
+    }
+    #quote {
+        font-size: 5vw;
+    }
     .grid-container {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
+    #sundays,
     .main-title,
     .sub-title,
-    .tagline {
-        grid-column: 1;
-    }
-    .main-title {
-        grid-row: 1;
-    }
-    .sub-title {
-        grid-row: 2;
-    }
-    .tagline {
-        grid-row: 3;
-    }
-    #aframe {
-        grid-column: 12 / 13;
-    }
+    .tagline,
     #social {
-        font-size: 3vw;
+        display: none;
     }
+
+    .mobile-title,
+.mobile_tagline,
+#mobile_sundays,
+#mobile_social {
+    display: grid;
+}
+    
+    #mobile_sundays {
+         grid-row: 1;
+        font-size: 17vw;
+        animation: slideInLeft 3s forwards 2s;
+    }
+    #mobile_social {
+        grid-row: 2;
+        grid-column: 1;
+        font-size: 5vw;
+        text-decoration: none;
+        color: black;
+        animation: slideInRight 2.5s forwards 2s;
+    }
+    #mobile_social a {
+        text-decoration: none;
+        color: black;
+    }
+    .mobile-title {
+        grid-row: 3;
+        font-size: 8vw;
+        animation: slideInRight 2.5s forwards 2s;
+    }
+    .mobile_tagline {
+        grid-row: 4;
+        font-size: 8vw;
+        text-align: left ;
+        color: black;
+        animation: slideInLeft 3s forwards 2s;
+    }
+    
 
     #whats-happening {
         /* or any other color you prefer */
@@ -536,7 +609,7 @@ input[type="email"] {
     }
 
     #logo {
-        width: 150px;
+        font-size: 12vw;
     }
 
     #submitButton {
@@ -548,6 +621,17 @@ input[type="email"] {
         justify-content: center;
         align-items: center;
         font-size: 5vw;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #emailInput {
+        margin: 0;
+        padding: 0;
+        font-size: 8vw;
+        text-align: center;
+    }
+    .footer_text, #email {
+        font-size: 3vw;
     }
     .footer-bottom {
         font-size: 3.5vw;

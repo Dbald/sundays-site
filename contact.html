@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="navbar">
+    <div id="contact_navbar">
         <a href="/index.html">Sundays</a>
         <a href="#contact">Contact Us</a>
     </div>
@@ -31,29 +31,96 @@
         <div class="footer-top">
             JOIN THE CLUB, SUBSCRIBE TO OUR NEWSLETTER:
             <input type="email" id="emailInput" placeholder="ENTER YOUR EMAIL">
-            <a><button id="submitButton" style="display: none;">Subscribe</button></a>
+            <a><button id="submitButton" style="display: none;">SUBSCRIBE</button></a>
         </div>
         
-        <img id="logo" src="img/sundays_logo.png" alt="SUNDAYS logo" width="300">
+        <h1 id="logo">SUNDAYS.LLC</h1>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>VISIT US:</h3>
-                <p>3054 S Victoria Ave.<br>Los Angeles, CA 90016</p>
+                <p class="footer_text">3054 S Victoria Ave.<br>Los Angeles, CA 90016</p>
             </div>
             <div class="footer-section">
                 <h3>CONTACT US:</h3>
-                <a href="mailto:info@sundays.com">info@sundays.com</a><br>
-                Phone: +123-456-7890
+                <a id="email" href="mailto:info@sundays.com">info@sundays.com</a><br>
+                <p class="footer_text">Phone: +123-456-7890</p>
             </div>
             <div class="footer-section">
                 <h3>FOLLOW US:</h3>
-                <p>Instagram, TikTok,<br>Twitter, Facebook, Pinterest</p>
+                <p class="footer_text">Instagram, TikTok,<br>Twitter, Facebook, Pinterest</p>
             </div>
         </div>
         <div class="footer-bottom">
-            © 2023 Sundays LLC
+            <p class="footer_text">© 2023 Sundays LLC</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Define the quotes array and the getRandomQuote function...
+    const quotes = [
+                "I don’t buy out the bar, I bought the night spot, I got the right stock, I got stockbrokers that’s movin’ it like white tops … – Jay Z",
+                "Own boss, own your masters, slaves, the mentality I carry with me to this very day, fuck rich, let’s get wealthy, who else gon’ feed we? – Jay Z",
+                "… I can’t help the poor if I’m one of them, so I got rich and gave back, to me, that’s the win-win … – Jay Z",
+                "We on our own, stop sittin’ around waitin’ for folks to throw you a bone, if you can’t buy the building at least stock the shelf, then keep on stackin’ ’til you stockin’ for yourself … – Jay Z",
+                // Add more quotes as desired
+            ];
+
+            // Function to get a random quote
+            function getRandomQuote() {
+                return quotes[Math.floor(Math.random() * quotes.length)];
+            }
+    // Set the initial quote
+    const quoteContainer = document.getElementById('quote');
+    quoteContainer.textContent = getRandomQuote();
+
+    // Disable scrolling
+    document.body.style.overflow = 'hidden';
+    
+    // Get the navbar and its initial position
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    // Define the stickyNav function
+    function stickyNav() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+    
+    // Add the scroll event listener
+    window.addEventListener('scroll', stickyNav);
+
+    document.getElementById('emailInput').addEventListener('input', function() {
+    var emailInput = document.getElementById('emailInput');
+    var submitButton = document.getElementById('submitButton');
+    if (emailInput.value) {
+        submitButton.style.display = 'flex';
+    } else {
+        submitButton.style.display = 'none';
+    }
+});
+
+
+    // Wait for the quote to fade out, then hide it and recalculate the navbar's sticky position
+    setTimeout(() => {
+        var intro = document.getElementById('quote-container');
+        if (intro) {
+            
+            
+                intro.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+                // Now that the intro is hidden, recalculate the sticky position
+                sticky = navbar.offsetTop;
+                stickyNav(); // Apply sticky navigation logic immediately
+            
+        }
+    }, 2000); // Display the quote for 2 seconds before starting the fade-out
+});
+
+
+    </script>
 
 </body>
 
