@@ -359,7 +359,7 @@ header {
     text-align: center;
     font-size: 3vw;
     /* Large text size for quotes */
-    font-family: "Franklin Bold";
+    font-family: "Franklin Gothic";
     /* Text color */
     color: black;
     /* Background color */
@@ -590,7 +590,7 @@ input[type="email"] {
         grid-column: 1;
         font-size: 8vw;
         padding: 5px;
-        font-family: "Merchant Copy";
+        font-family: "Franklin Gothic";
         text-decoration: none;
         color: black;
         animation: slideInRight 2.5s forwards 2s;
