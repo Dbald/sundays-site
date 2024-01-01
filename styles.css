@@ -495,11 +495,22 @@ a-scene {
 }
 
 /* Contact Page */
-#connect {
-    
+mark {
+  background-color: #FE4600;  
+}
+.h2 {
+    line-height: 0;
+}
+.h3 {
+    font-size: 3vw;
 }
 
-
+a {
+    text-decoration: none;
+}
+#email {
+    color: white;
+}
 
 footer {
     background-color: black;

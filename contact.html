@@ -16,15 +16,9 @@
         <a href="#contact">Contact Us</a>
     </div>
     <section class="about" id="contact">
-        <h2 id="connect">Connect With Us!</h2>
-        <h3>In Person</h3>
-        <mark>Address</mark>
-        <br>
-        Dates
-        <h3>By Phone</h3>
-        (123) 456-7890
-        <h3>By Email</h3>
-        For general inquires, please email <mark><a href="mailto:info@sundays.com">info@sundays.com</a></mark>
+        <h2 class="h2">Connect With Us!</h2>
+        <h3 class="h3">By Email</h3>
+        For general inquires, please email <mark><a id="email" href="mailto:info@sundays.com">info@sundays.com</a></mark>
     </section>
 
     <footer>
@@ -39,7 +33,7 @@
             
             <div class="footer-section">
                 <h3>FOLLOW US:</h3>
-                <p class="footer_text"><a
+                <p id="insta" class="footer_text"><a
                     href="https://www.instagram.com/sundays.llc/">Instagram</a></p>
             </div>
         </div>
@@ -47,73 +41,6 @@
             <p class="footer_text">© 2023 Sundays LLC</p>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    // Define the quotes array and the getRandomQuote function...
-    const quotes = [
-                "I don’t buy out the bar, I bought the night spot, I got the right stock, I got stockbrokers that’s movin’ it like white tops … – Jay Z",
-                "Own boss, own your masters, slaves, the mentality I carry with me to this very day, fuck rich, let’s get wealthy, who else gon’ feed we? – Jay Z",
-                "… I can’t help the poor if I’m one of them, so I got rich and gave back, to me, that’s the win-win … – Jay Z",
-                "We on our own, stop sittin’ around waitin’ for folks to throw you a bone, if you can’t buy the building at least stock the shelf, then keep on stackin’ ’til you stockin’ for yourself … – Jay Z",
-                // Add more quotes as desired
-            ];
-
-            // Function to get a random quote
-            function getRandomQuote() {
-                return quotes[Math.floor(Math.random() * quotes.length)];
-            }
-    // Set the initial quote
-    const quoteContainer = document.getElementById('quote');
-    quoteContainer.textContent = getRandomQuote();
-
-    // Disable scrolling
-    document.body.style.overflow = 'hidden';
-    
-    // Get the navbar and its initial position
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-
-    // Define the stickyNav function
-    function stickyNav() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky");
-        } else {
-            navbar.classList.remove("sticky");
-        }
-    }
-    
-    // Add the scroll event listener
-    window.addEventListener('scroll', stickyNav);
-
-    document.getElementById('emailInput').addEventListener('input', function() {
-    var emailInput = document.getElementById('emailInput');
-    var submitButton = document.getElementById('submitButton');
-    if (emailInput.value) {
-        submitButton.style.display = 'flex';
-    } else {
-        submitButton.style.display = 'none';
-    }
-});
-
-
-    // Wait for the quote to fade out, then hide it and recalculate the navbar's sticky position
-    setTimeout(() => {
-        var intro = document.getElementById('quote-container');
-        if (intro) {
-            
-            
-                intro.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-                // Now that the intro is hidden, recalculate the sticky position
-                sticky = navbar.offsetTop;
-                stickyNav(); // Apply sticky navigation logic immediately
-            
-        }
-    }, 2000); // Display the quote for 2 seconds before starting the fade-out
-});
-
-
-    </script>
 
 </body>
 
