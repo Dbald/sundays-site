@@ -132,20 +132,20 @@ body {
     font-family: "Franklin Gothic";
     font-size: x-large;
     text-transform: uppercase;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
     color: white;
-    background-color: white;
+    background-color: black;
 }
 
 h1,
 h2 {
     font-family: "Franklin Gothic";
     font-size: 6vw;
+    
 
 }
 
@@ -172,7 +172,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #55f040;
+    /* background-color: #55f040; */
+    background-color: #FE4600;
     /* Assuming white as the background color */
     z-index: 1000;
     /* To ensure it appears above all other content */
@@ -206,7 +207,7 @@ header {
     /* Space between grid items */
     padding: 0;
     /* Header padding */
-    background-color: #55f040;
+    background-color: #FE4600;
     line-height: 0.8;
     box-sizing: border-box;
 
@@ -295,7 +296,7 @@ header {
 
 #navbar {
     overflow: hidden;
-    background-color: #55f040;
+    background-color: #FE4600;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -307,7 +308,7 @@ header {
 }
 #contact_navbar {
     overflow: hidden;
-    background-color: #55f040;
+    background-color: #FE4600;
     z-index: 1000;
     display: flex;
     position: fixed;
@@ -347,7 +348,7 @@ header {
 }
 
 #navbar a.active {
-    background-color: #04AA6D;
+    background-color: #FE4600;
     color: white;
 }
 
@@ -369,7 +370,7 @@ header {
     opacity: 1;
     /* Start fully visible */
     padding: 5%;
-    background-color: #55f040;
+    background-color: #FE4600;
     box-sizing: border-box;
 }
 
@@ -489,11 +490,19 @@ a-scene {
     animation-iteration-count: infinite;
 }
 
+/* Contact Page */
+#connect {
+    
+}
 
 
 
 footer {
     background-color: black;
+}
+.footer_text a {
+    text-decoration: none;
+    color: white;
 }
 
 footer {
@@ -548,7 +557,7 @@ input[type="email"] {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #navbar a {
-        font-size: 10vw;
+        font-size: 5vw;
     }
     #contact_navbar a {
         font-size: 3vw;
@@ -592,7 +601,7 @@ input[type="email"] {
         grid-column: 1;
         font-size: 8vw;
         padding: 5px;
-        font-family: "Franklin Gothic";
+        font-family: "Merchant Copy";
         text-decoration: none;
         color: black;
         animation: slideInRight 2.5s forwards 2s;
