@@ -233,6 +233,8 @@ header {
     font-family: "Franklin Gothic";
     font-size: 9vw;
     animation: slideInLeft 2s forwards 2s;
+    color: white;
+    -webkit-text-stroke: 2px black;
     /* Adjust to match your design */
     /* Additional styling */
 }
@@ -258,6 +260,7 @@ header {
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    color: white;
 }
 
 #aframe {
@@ -345,6 +348,7 @@ header {
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    color: white;
 }
 
 #navbar a.active {
@@ -515,6 +519,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-size: 2vw;
     border-bottom: 1px solid white;
     
 }
@@ -552,6 +557,14 @@ input[type="email"] {
     border-top: 1px solid white;
     padding-top: 10px;
     margin-top: 20px;
+}
+
+#insta:hover {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: white;
 }
 
 /* Responsive adjustments */
@@ -594,6 +607,8 @@ input[type="email"] {
     #mobile_sundays {
          grid-row: 1;
         font-size: 30vw;
+        color: white;
+        -webkit-text-stroke: 2px black;
         animation: slideInLeft 3s forwards 2s;
     }
     #mobile_social {
