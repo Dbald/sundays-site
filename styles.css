@@ -650,7 +650,13 @@ input[type="email"] {
         
     }
     
-
+    .h2 {
+        font-size: 14vw;
+        padding-top: 25px;
+    }
+    .h3 {
+        font-size: 8vw;
+    }
     #whats-happening {
         /* or any other color you prefer */
         padding-top: 2em;
