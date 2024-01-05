@@ -173,7 +173,7 @@ section {
     align-items: center;
     justify-content: center;
     /* background-color: #55f040; */
-    background-color: #FE4600;
+    background-color: #55f040;
     /* Assuming white as the background color */
     z-index: 1000;
     /* To ensure it appears above all other content */
@@ -207,7 +207,7 @@ header {
     /* Space between grid items */
     padding: 0;
     /* Header padding */
-    background-color: #FE4600;
+    background-color: #55f040;
     line-height: 0.8;
     box-sizing: border-box;
 
@@ -299,7 +299,7 @@ header {
 
 #navbar {
     overflow: hidden;
-    background-color: #FE4600;
+    background-color: #55f040;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -311,7 +311,7 @@ header {
 }
 #contact_navbar {
     overflow: hidden;
-    background-color: #FE4600;
+    background-color: #55f040;
     z-index: 1000;
     display: flex;
     position: fixed;
@@ -352,7 +352,7 @@ header {
 }
 
 #navbar a.active {
-    background-color: #FE4600;
+    background-color: #55f040;
     color: white;
 }
 
@@ -374,7 +374,7 @@ header {
     opacity: 1;
     /* Start fully visible */
     padding: 5%;
-    background-color: #FE4600;
+    background-color: #55f040;
     box-sizing: border-box;
 }
 
@@ -496,7 +496,7 @@ a-scene {
 
 /* Contact Page */
 mark {
-  background-color: #FE4600;  
+  background-color: #55f040;  
 }
 .h2 {
     line-height: 0;
