@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holding Company</title>
+    <title>__</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./img/Coffee co..png">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 
 <body>
-        <div id="quote-container">
-            <p id="quote"></p>
-        </div>
+    <div id="quote-container">
+        <p id="quote"></p>
+    </div>
     <header>
         <div class="grid-container">
             <div class="main-title"><span id="sundays">Sundays</span> is a creative</div><span id="social"><a
@@ -21,8 +22,8 @@
             <div class="sub-title">suite that combines culture with the business of selling</div>
             <div class="tagline">- For those who are ambitious.</div>
             <span id="mobile_sundays">Sundays</span>
-            <span id="mobile_social"><a
-                href="https://www.instagram.com/sundays.llc/" target="_blank">@sundays.llc</a></span>
+            <span id="mobile_social"><a href="https://www.instagram.com/sundays.llc/"
+                    target="_blank">@sundays.llc</a></span>
             <div class="mobile-title">
                 is a creative suite that combines culture with the business of selling
             </div>
@@ -36,7 +37,7 @@
         <a href="/contact.html">Contact Us</a>
     </div>
     <section class="about" id="whats-happening">
-        
+
         <!-- <h2>What's Happening?</h2>
         <div class="tags">
             <span class="tag">SUNDAYS COFFEE</span>
@@ -51,14 +52,14 @@
             <input type="email" id="emailInput" placeholder="ENTER YOUR EMAIL">
             <a><button id="submitButton" style="display: none;">SUBSCRIBE</button></a>
         </div>
-        
+
         <h1 id="logo">SUNDAYS.LLC</h1>
         <div class="footer-content">
-            
+
             <div class="footer-section">
                 <h3>FOLLOW US:</h3>
-                <p id="insta" class="footer_text"><a
-                    href="https://www.instagram.com/sundays.llc/" target="_blank">Instagram</a></p>
+                <p id="insta" class="footer_text"><a href="https://www.instagram.com/sundays.llc/"
+                        target="_blank">Instagram</a></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -71,9 +72,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-    // Define the quotes array and the getRandomQuote function...
-    const quotes = [
-                "But by the grace of God I am what I am, and his grace to me was not without effect. No, I worked harder than all of them--yet not I, but the grace of God that was with me - 1 Corinthians 15:10" ,
+            // Define the quotes array and the getRandomQuote function...
+            const quotes = [
+                "But by the grace of God I am what I am, and his grace to me was not without effect. No, I worked harder than all of them--yet not I, but the grace of God that was with me - 1 Corinthians 15:10",
                 "Own boss, own your masters, slaves, the mentality I carry with me to this very day, fuck rich, let’s get wealthy, who else gon’ feed we? – Jay Z",
                 "… I can’t help the poor if I’m one of them, so I got rich and gave back, to me, that’s the win-win … – Jay Z",
                 "We on our own, stop sittin’ around waitin’ for folks to throw you a bone, if you can’t buy the building at least stock the shelf, then keep on stackin’ ’til you stockin’ for yourself … – Jay Z",
@@ -84,55 +85,63 @@
             function getRandomQuote() {
                 return quotes[Math.floor(Math.random() * quotes.length)];
             }
-    // Set the initial quote
-    const quoteContainer = document.getElementById('quote');
-    quoteContainer.textContent = getRandomQuote();
+            // Set the initial quote
+            const quoteContainer = document.getElementById('quote');
+            quoteContainer.textContent = getRandomQuote();
 
-    // Disable scrolling
-    document.body.style.overflow = 'hidden';
-    
-    // Get the navbar and its initial position
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
+            // Disable scrolling
+            document.body.style.overflow = 'hidden';
 
-    // Define the stickyNav function
-    function stickyNav() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky");
-        } else {
-            navbar.classList.remove("sticky");
-        }
-    }
-    
-    // Add the scroll event listener
-    window.addEventListener('scroll', stickyNav);
+            // Get the navbar and its initial position
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
 
-    document.getElementById('emailInput').addEventListener('input', function() {
-    var emailInput = document.getElementById('emailInput');
-    var submitButton = document.getElementById('submitButton');
-    if (emailInput.value) {
-        submitButton.style.display = 'flex';
-    } else {
-        submitButton.style.display = 'none';
-    }
-});
+            // Define the stickyNav function
+            function stickyNav() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky");
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+
+            // Add the scroll event listener
+            window.addEventListener('scroll', stickyNav);
+
+            document.getElementById('emailInput').addEventListener('input', function () {
+                var emailInput = document.getElementById('emailInput');
+                var submitButton = document.getElementById('submitButton');
+                if (emailInput.value) {
+                    submitButton.style.display = 'flex';
+                } else {
+                    submitButton.style.display = 'none';
+                }
+            });
+
+            var titles = ["SUNDAYS IS CREATIVE", "SUNDAYS IS CULTURE", "SUNDAYS IS AMBITIOUS"]; // List your titles here
+            var currentIndex = 0;
+
+            setInterval(() => {
+                document.title = titles[currentIndex];
+                currentIndex++;
+                if (currentIndex >= titles.length) currentIndex = 0;
+            }, 2000); // Change every 2000 milliseconds (2 seconds)
+
+            // Wait for the quote to fade out, then hide it and recalculate the navbar's sticky position
+            setTimeout(() => {
+                var intro = document.getElementById('quote-container');
+                if (intro) {
 
 
-    // Wait for the quote to fade out, then hide it and recalculate the navbar's sticky position
-    setTimeout(() => {
-        var intro = document.getElementById('quote-container');
-        if (intro) {
-            
-            
-                intro.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-                // Now that the intro is hidden, recalculate the sticky position
-                sticky = navbar.offsetTop;
-                stickyNav(); // Apply sticky navigation logic immediately
-            
-        }
-    }, 2000); // Display the quote for 2 seconds before starting the fade-out
-});
+                    intro.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Re-enable scrolling
+                    // Now that the intro is hidden, recalculate the sticky position
+                    sticky = navbar.offsetTop;
+                    stickyNav(); // Apply sticky navigation logic immediately
+
+                }
+            }, 2000); // Display the quote for 2 seconds before starting the fade-out
+        });
 
 
     </script>
