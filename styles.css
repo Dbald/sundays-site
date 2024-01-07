@@ -236,8 +236,8 @@ header {
     font-family: "Franklin Gothic";
     font-size: 9vw;
     animation: slideInLeft 2s forwards 2s;
-    color: white;
-    -webkit-text-stroke: 2px black;
+    color: black;
+    /* -webkit-text-stroke: 2px black; */
     /* Adjust to match your design */
     /* Additional styling */
 }
@@ -621,8 +621,8 @@ input[type="email"] {
     #mobile_sundays {
          grid-row: 1;
         font-size: 30vw;
-        color: white;
-        -webkit-text-stroke: 2px black;
+        color: black;
+        /* -webkit-text-stroke: 2px black; */
         animation: slideInLeft 3s forwards 2s;
     }
     #mobile_social {
