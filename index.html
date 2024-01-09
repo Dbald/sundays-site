@@ -13,33 +13,36 @@
 
 <body>
     <div id="quote-container">
+        <span id="quote"></span>
     </div>
     <header>
         <div class="grid-container">
-            <div class="main-title"><span id="sundays">Sundays</span> is a creative</div><span id="social"><a
+            <div class="main-title"><a href="#home"><span id="sundays">Sundays</span></a> is a creative</div><span id="social"><a
                     href="https://www.instagram.com/sundays.llc/" target="_blank">@sundays.llc</a></span>
             <span id="sub-section">suite that combines</span>
             <div class="sub-title">culture with the </div><span id="end-sub-title">business of selling</span>
-            <address>+1 4154099220
+            <div class="address">
+                +1 4154099220
                 email@sundays.llc<br>
                 P.O. BOX 898
-                Lafayette, California 94549</address>
-            <div class="tagline">- For those who are</div><span id="end-tag">ambitious!</span>
+                Lafayette, California 94549</div>
+            <div class="tagline">-For those who are</div><span id="end-tag">ambitious!</span>
 
             <!-- Mobile -->
 
-            <span id="mobile_sundays">Sundays</span>
+            <a href="#home"><span id="mobile_sundays">Sundays</span></a>
             <span id="mobile_social"><a href="https://www.instagram.com/sundays.llc/"
                     target="_blank">@sundays.llc</a></span>
             <div class="mobile-title">
                 is a creative suite that combines culture with the business of selling
             </div>
-            <div id="mobile_address">+1 4154099220<br>
+            <div id="mobile_address">
+                +1 4154099220<br>
                 email@sundays.llc<br>
                 P.O. BOX 898<br>
                 Lafayette, California 94549</div>
 
-            <div class="mobile_tagline">- For those who are </div><span id="mobile-end-tag">ambitious!</span>
+            <div class="mobile_tagline">-For those<br> who are </div><span id="mobile-end-tag">ambitious!</span>
             <!-- ... rest of your header content ... -->
         </div>
         <!-- ... rest of your header content ... -->
@@ -66,72 +69,43 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Define the quotes array and the getRandomQuote function...
             const quotes = [
-                "Perfect describes no formula beyond the eye of the beholder.",
                 "BUT FOR THE GRACE OF GOD, THERE GO I...",
-                "BE MORE FEARLESS!!!",
+                "BE MORE FEARLESS!",
                 "IMPACT > INTENTION",
                 // Add more quotes as desired
             ];
 
             // Function to get a random quote
             function getRandomQuote() {
-                return quotes[Math.floor(Math.random() * quotes.length)];
-            }
-            // Set the initial quote
-            const quoteContainer = document.getElementById('quote-container');
+        return quotes[Math.floor(Math.random() * quotes.length)];
+    }
 
-            // Total duration for the entire quote to be typed out (in milliseconds)
-            const totalIntroDuration = 2050; // Adjust this to match your intro duration
+    const quoteContainer = document.getElementById('quote-container');
+    const selectedQuote = getRandomQuote();
 
-            const quoteSpan = document.createElement('span');
-            quoteSpan.classList.add('typing-line');
-            quoteContainer.appendChild(quoteSpan);
+    const quoteSpan = document.createElement('span');
+    quoteSpan.classList.add('typing-line');
+    quoteContainer.appendChild(quoteSpan);
 
-            const selectedQuote = getRandomQuote();
-            let currentCharIndex = 0;
-            const typingSpeed = 90; // Milliseconds per character
+    // Set the maximum width to fit the length of the quote
+    quoteSpan.style.maxWidth = `${selectedQuote.length}ch`; // ch unit scales with the number of characters
 
-            quoteSpan.style.maxWidth = `${selectedQuote.length}ch`;
+    let currentCharIndex = 0;
+    const typingSpeed = 100; // Milliseconds per character
 
-            const typeCharacter = () => {
-                if (currentCharIndex < selectedQuote.length) {
-                    quoteSpan.textContent += selectedQuote[currentCharIndex++];
-                    setTimeout(typeCharacter, typingSpeed);
-                } else {
-                    // When typing is complete, start the animations in the grid container
-                    startGridAnimations();
-                }
-            };
-            function startGridAnimations() {
-                // Select the elements in the grid container you want to animate
-                const gridElements = document.querySelectorAll('.grid-container > *'); // Adjust selector as needed
-                const mainTitle = document.querySelector('.main-title');
-                const subSection = document.querySelector('#sub-section');
-                const subTitle = document.querySelector('.sub-title');
-                const social = document.querySelector('#social');
-                const endSubTitle = document.querySelector('#end-sub-title');
-                const address = document.querySelector('address');
-                const tagline = document.querySelector('.tagline');
-                const endTag = document.querySelector('#end-tag');
-                const dividingTag = document.querySelector('.dividing-tag');
+    const typeCharacter = () => {
+        if (currentCharIndex < selectedQuote.length) {
+            quoteSpan.textContent += selectedQuote[currentCharIndex++];
+            setTimeout(typeCharacter, typingSpeed);
+        }
+    };
 
-                // Use a timeout if you want to delay the start of the animations
-                setTimeout(() => {
-                    if (mainTitle) {
-                        mainTitle.style.animation = 'slideInLeft 2s forwards 2s';
-                    }
-                    if (subSection) {
-                        subSection.style.animation = 'slideInLeft 2.5s forwards 2s';
-                    }
-                }, 500);
-            }
-            typeCharacter(); // Start typing effect
-
-            // Hide the quote container after the intro duration
-            setTimeout(() => {
-                quoteContainer.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-            }, selectedQuote.length * typingSpeed + 1000);
+    typeCharacter(); // Start typing effect
+    // Hide the quote container after the intro duration
+    setTimeout(() => {
+        quoteContainer.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }, selectedQuote.length * typingSpeed + 1000);
 
 
 
