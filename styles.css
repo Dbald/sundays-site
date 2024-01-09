@@ -793,8 +793,8 @@ input[type="email"] {
 
     #mobile_address {
         display: flex;
-    align-items: center;
-    justify-content: left;
+    align-items: left;
+    flex-direction: column;
     font-family: "ITC American Typewriter";
     text-transform: none;
     padding-top: 15px;
