@@ -770,7 +770,7 @@ input[type="email"] {
     #mobile_social {
         grid-row: 2;
         grid-column: 1;
-        padding-top: 15px;
+        padding-top: 10px;
         padding-bottom: 25px;
         padding-left: 10px;
         font-size: 4vw;
