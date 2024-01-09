@@ -13,29 +13,41 @@
 
 <body>
     <div id="quote-container">
-        <p id="quote"></p>
     </div>
     <header>
         <div class="grid-container">
             <div class="main-title"><span id="sundays">Sundays</span> is a creative</div><span id="social"><a
                     href="https://www.instagram.com/sundays.llc/" target="_blank">@sundays.llc</a></span>
-            <div class="sub-title">suite that combines culture with the business of selling</div>
-            <div class="tagline">- For those who are ambitious.</div>
+            <span id="sub-section">suite that combines</span>
+            <div class="sub-title">culture with the </div><span id="end-sub-title">business of selling</span>
+            <address>+1 4154099220
+                email@sundays.llc<br>
+                P.O. BOX 898
+                Lafayette, California 94549</address>
+            <div class="tagline">- For those who are</div><span id="end-tag">ambitious!</span>
+
+            <!-- Mobile -->
+
             <span id="mobile_sundays">Sundays</span>
             <span id="mobile_social"><a href="https://www.instagram.com/sundays.llc/"
                     target="_blank">@sundays.llc</a></span>
             <div class="mobile-title">
                 is a creative suite that combines culture with the business of selling
             </div>
-            <div class="mobile_tagline">- For those who are ambitious.</div>
+            <div id="mobile_address">+1 4154099220<br>
+                email@sundays.llc<br>
+                P.O. BOX 898<br>
+                Lafayette, California 94549</div>
+
+            <div class="mobile_tagline">- For those who are </div><span id="mobile-end-tag">ambitious!</span>
             <!-- ... rest of your header content ... -->
         </div>
         <!-- ... rest of your header content ... -->
     </header>
-    <div id="navbar">
-        <!-- <a href="#home">Sundays</a> -->
+    <!-- <div id="navbar">
+        <a href="#home">Sundays</a>
         <a href="/contact.html">Contact Us</a>
-    </div>
+    </div> -->
     <section class="about" id="whats-happening">
 
         <!-- <h2>What's Happening?</h2>
@@ -46,38 +58,18 @@
         </div> -->
     </section>
 
-    <footer>
-        <div class="footer-top">
-            JOIN THE CLUB, SUBSCRIBE TO OUR NEWSLETTER:
-            <input type="email" id="emailInput" placeholder="ENTER YOUR EMAIL">
-            <a><button id="submitButton" style="display: none;">SUBSCRIBE</button></a>
-        </div>
-
-        <h1 id="logo">SUNDAYS.LLC</h1>
-        <div class="footer-content">
-
-            <div class="footer-section">
-                <h3>FOLLOW US:</h3>
-                <p id="insta" class="footer_text"><a href="https://www.instagram.com/sundays.llc/"
-                        target="_blank">Instagram</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p class="footer_text">© 2023 Sundays LLC</p>
-        </div>
-    </footer>
-
 
 
 
     <script>
+
         document.addEventListener('DOMContentLoaded', function () {
             // Define the quotes array and the getRandomQuote function...
             const quotes = [
-                "But by the grace of God I am what I am, and his grace to me was not without effect. No, I worked harder than all of them--yet not I, but the grace of God that was with me - 1 Corinthians 15:10",
-                "Own boss, own your masters, slaves, the mentality I carry with me to this very day, fuck rich, let’s get wealthy, who else gon’ feed we? – Jay Z",
-                "… I can’t help the poor if I’m one of them, so I got rich and gave back, to me, that’s the win-win … – Jay Z",
-                "We on our own, stop sittin’ around waitin’ for folks to throw you a bone, if you can’t buy the building at least stock the shelf, then keep on stackin’ ’til you stockin’ for yourself … – Jay Z",
+                "Perfect describes no formula beyond the eye of the beholder.",
+                "BUT FOR THE GRACE OF GOD, THERE GO I...",
+                "BE MORE FEARLESS!!!",
+                "IMPACT > INTENTION",
                 // Add more quotes as desired
             ];
 
@@ -86,37 +78,81 @@
                 return quotes[Math.floor(Math.random() * quotes.length)];
             }
             // Set the initial quote
-            const quoteContainer = document.getElementById('quote');
-            quoteContainer.textContent = getRandomQuote();
+            const quoteContainer = document.getElementById('quote-container');
+
+            // Total duration for the entire quote to be typed out (in milliseconds)
+            const totalIntroDuration = 2050; // Adjust this to match your intro duration
+
+            const quoteSpan = document.createElement('span');
+            quoteSpan.classList.add('typing-line');
+            quoteContainer.appendChild(quoteSpan);
+
+            const selectedQuote = getRandomQuote();
+            let currentCharIndex = 0;
+            const typingSpeed = 90; // Milliseconds per character
+
+            quoteSpan.style.maxWidth = `${selectedQuote.length}ch`;
+
+            const typeCharacter = () => {
+                if (currentCharIndex < selectedQuote.length) {
+                    quoteSpan.textContent += selectedQuote[currentCharIndex++];
+                    setTimeout(typeCharacter, typingSpeed);
+                } else {
+                    // When typing is complete, start the animations in the grid container
+                    startGridAnimations();
+                }
+            };
+            function startGridAnimations() {
+                // Select the elements in the grid container you want to animate
+                const gridElements = document.querySelectorAll('.grid-container > *'); // Adjust selector as needed
+                const mainTitle = document.querySelector('.main-title');
+                const subSection = document.querySelector('#sub-section');
+                const subTitle = document.querySelector('.sub-title');
+                const social = document.querySelector('#social');
+                const endSubTitle = document.querySelector('#end-sub-title');
+                const address = document.querySelector('address');
+                const tagline = document.querySelector('.tagline');
+                const endTag = document.querySelector('#end-tag');
+                const dividingTag = document.querySelector('.dividing-tag');
+
+                // Use a timeout if you want to delay the start of the animations
+                setTimeout(() => {
+                    if (mainTitle) {
+                        mainTitle.style.animation = 'slideInLeft 2s forwards 2s';
+                    }
+                    if (subSection) {
+                        subSection.style.animation = 'slideInLeft 2.5s forwards 2s';
+                    }
+                }, 500);
+            }
+            typeCharacter(); // Start typing effect
+
+            // Hide the quote container after the intro duration
+            setTimeout(() => {
+                quoteContainer.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }, selectedQuote.length * typingSpeed + 1000);
+
+
 
             // Disable scrolling
             document.body.style.overflow = 'hidden';
 
             // Get the navbar and its initial position
-            var navbar = document.getElementById("navbar");
-            var sticky = navbar.offsetTop;
+            // var navbar = document.getElementById("navbar");
+            // var sticky = navbar.offsetTop;
 
             // Define the stickyNav function
-            function stickyNav() {
-                if (window.pageYOffset >= sticky) {
-                    navbar.classList.add("sticky");
-                } else {
-                    navbar.classList.remove("sticky");
-                }
-            }
+            // function stickyNav() {
+            //     if (window.pageYOffset >= sticky) {
+            //         navbar.classList.add("sticky");
+            //     } else {
+            //         navbar.classList.remove("sticky");
+            //     }
+            // }
 
             // Add the scroll event listener
-            window.addEventListener('scroll', stickyNav);
-
-            document.getElementById('emailInput').addEventListener('input', function () {
-                var emailInput = document.getElementById('emailInput');
-                var submitButton = document.getElementById('submitButton');
-                if (emailInput.value) {
-                    submitButton.style.display = 'flex';
-                } else {
-                    submitButton.style.display = 'none';
-                }
-            });
+            // window.addEventListener('scroll', stickyNav);
 
             var titles = ["SUNDAYS IS CREATIVE", "SUNDAYS IS CULTURE", "SUNDAYS IS AMBITIOUS"]; // List your titles here
             var currentIndex = 0;
@@ -128,19 +164,9 @@
             }, 2000); // Change every 2000 milliseconds (2 seconds)
 
             // Wait for the quote to fade out, then hide it and recalculate the navbar's sticky position
-            setTimeout(() => {
-                var intro = document.getElementById('quote-container');
-                if (intro) {
+            // Adjust the setTimeout duration to match the totalIntroDuration
+            // After the typing animation completes, stop the cursor blinking
 
-
-                    intro.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // Re-enable scrolling
-                    // Now that the intro is hidden, recalculate the sticky position
-                    sticky = navbar.offsetTop;
-                    stickyNav(); // Apply sticky navigation logic immediately
-
-                }
-            }, 2000); // Display the quote for 2 seconds before starting the fade-out
         });
 
 

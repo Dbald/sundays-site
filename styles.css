@@ -13,6 +13,11 @@
     src: url(fonts/Merchant\ Copy.ttf);
 }
 
+@font-face {
+    font-family: "ITC American Typewriter";
+    src: url(fonts/AmericanTypewriterStd-Med.otf);
+}
+
 
 @keyframes slideUp {
     0% {
@@ -49,6 +54,11 @@
     100% {
         opacity: 1;
     }
+}
+
+@keyframes cursorBlink {
+    0%, 100% { border-right-color: #55f040; }
+    50% { border-right-color: transparent; }
 }
 
 @keyframes slideInLeft {
@@ -124,9 +134,15 @@
     }
 }
 
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
 html {
     scroll-behavior: smooth;
 }
+
 title {
     font-family: "Franklin Gothic";
 }
@@ -137,18 +153,18 @@ body {
     text-transform: uppercase;
     margin: 0;
     padding: 0;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
     height: 100vh;
     color: white;
-    background-color: black;
+    background-color: #F1F1F1;
 }
 
 h1,
 h2 {
     font-family: "Franklin Gothic";
     font-size: 6vw;
-    
+
 
 }
 
@@ -166,7 +182,7 @@ section {
     padding: 2%;
     color: black;
     box-sizing: border-box;
-    background-color: white
+    background-color: #F1F1F1
 }
 
 #logo-intro {
@@ -210,7 +226,7 @@ header {
     /* Space between grid items */
     padding: 0;
     /* Header padding */
-    background-color: #55f040;
+    background-color: #F1F1F1;
     line-height: 0.8;
     box-sizing: border-box;
 
@@ -218,38 +234,62 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     /* 12-column grid */
     grid-template-rows: auto;
     gap: 0;
+    /* height: 100vh; */
     text-align: left;
     color: black;
     transition: 1s;
-    padding: 1rem 1rem 0;
+    padding: 1rem 1rem;
+    line-height: 0.7;
+    box-sizing: border-box;
     /* Adjust to match your design */
 }
 
 .main-title {
-    grid-column: 1 / 11;
+    grid-column: 1 / 10;
     /* Adjust based on your design */
     grid-row: 1;
     font-family: "Franklin Gothic";
-    font-size: 9vw;
+    font-size: 11vw;
     animation: slideInLeft 2s forwards 2s;
     color: black;
+    box-sizing: border-box;
     /* -webkit-text-stroke: 2px black; */
     /* Adjust to match your design */
     /* Additional styling */
 }
 
+address {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: "ITC American Typewriter";
+    text-transform: none;
+    line-height: 1.5;
+    grid-column: 2 / 5;
+    grid-row: 6;
+    font-size: 1.3vw;
+    padding-left: 10px;
+    box-sizing: border-box;
+    animation: slideInRight 3s forwards 2s;
+}
+
 #social {
-    grid-column: 12 / 13;
-    grid-row: 1;
-    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    grid-column: 4 / 6;
+    grid-row: 3;
+    opacity: 0;
+    font-size: 1.5vw;
     text-transform: uppercase;
     line-height: 1.6;
-    font-family: "Merchant Copy";
-    animation: slideInDown 3s forwards 2s;
+    font-family: "ITC American Typewriter";
+    animation: fadeIn 3s forwards 5s;
+    box-sizing: border-box;
 
 }
 
@@ -263,46 +303,89 @@ header {
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    color: white;
+    color: black;
 }
 
-#aframe {
-    grid-column: 1 / 5;
+#sub-section {
+    grid-column: 1 / 9;
     grid-row: 2;
+    font-family: "Franklin Gothic";
+    font-size: 11vw;
+    animation: slideInLeft 2.5s forwards 2s;
+    box-sizing: border-box;
 }
 
 .sub-title {
-    grid-column: 1 / 13;
+    grid-column: 1 / 4;
     /* Adjust based on your design */
-    grid-row: 2;
+    grid-row: 3;
     font-family: "Franklin Gothic";
-    font-size: 9vw;
+    font-size: 10.3vw;
     animation: slideInRight 2.5s forwards 2s;
+    box-sizing: border-box;
     /* Adjust to match your design */
     /* Additional styling */
 }
 
+#end-sub-title {
+    grid-column: 1 / 9;
+    /* Adjust based on your design */
+    grid-row: 4;
+    font-family: "Franklin Gothic";
+    font-size: 11vw;
+    animation: slideInRight 2.5s forwards 2s;
+    box-sizing: border-box;
+}
+
+
 .tagline {
-    grid-column: 1 / 13;
+    grid-column: 1 / 9;
     /* Span across all columns */
-    grid-row: 3;
+    grid-row: 5;
     /* This should match the font in your design */
-    font-size: 9vw;
+    font-size: 11vw;
     animation: slideInLeft 3s forwards 2s;
+    box-sizing: border-box;
     /* Adjust to match your design */
     /* Additional styling */
+}
+
+#end-tag {
+    grid-column: 1 / 2;
+    grid-row: 6;
+    font-size: 11vw;
+    box-sizing: border-box;
+    animation: cursorBlink 1s infinite,slideInLeft 3s forwards 2s;
+         border-right: 9px solid #56F040; /* Simulates the cursor */
+}
+
+.dividing-tag {
+    margin: 0;
+   padding: 0;
+    color: #56F040;
+    font-weight: normal;
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    font-size: 8vw;
+    line-height: 0;
+    box-sizing: border-box;
 }
 
 .mobile-title,
 .mobile_tagline,
 #mobile_sundays,
-#mobile_social {
+#mobile_social,
+#mobile-end-tag,
+#mobile_address,
+.mobile-dividing-tag {
     display: none;
 }
 
 #navbar {
     overflow: hidden;
-    background-color: #55f040;
+    background-color: #F1F1F1;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -312,9 +395,10 @@ header {
     width: 100%;
     transition: all 0.5s ease;
 }
+
 #contact_navbar {
     overflow: hidden;
-    background-color: #55f040;
+    background-color: #F1F1F1;
     z-index: 1000;
     display: flex;
     position: fixed;
@@ -325,16 +409,18 @@ header {
     width: 100%;
     transition: all 0.5s ease;
 }
+
 #navbar a {
     float: left;
     display: block;
     color: black;
     text-align: center;
-    padding: 10px ;
+    padding: 10px;
     line-height: 1.3;
     text-decoration: none;
     font-size: 2vw;
 }
+
 #contact_navbar a {
     float: left;
     display: block;
@@ -355,7 +441,7 @@ header {
 }
 
 #navbar a.active {
-    background-color: #55f040;
+    background-color: #F1F1F1;
     color: white;
 }
 
@@ -377,7 +463,7 @@ header {
     opacity: 1;
     /* Start fully visible */
     padding: 5%;
-    background-color: #55f040;
+    background-color: #F1F1F1;
     box-sizing: border-box;
 }
 
@@ -385,11 +471,11 @@ header {
     position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100; 
+    z-index: -100;
 }
 
 #whats-happening iframe {
@@ -445,11 +531,14 @@ header {
     line-height: 1.5;
     font-size: 7vw;
 }
+
 #email {
     text-decoration: none;
     color: black;
 }
-.footer_text, #email {
+
+.footer_text,
+#email {
     font-size: 1vw;
 }
 
@@ -463,6 +552,20 @@ header {
     animation-timing-function: ease;
     animation-fill-mode: forwards;
 }
+.typing-line {
+    border-right: 3px solid #55f040; /* Simulates the cursor */
+    animation: cursorBlink 1s infinite; /* Applies the blinking effect */
+    overflow: hidden; /* Hides the text until it's 'typed' */
+    word-wrap: break-word; /* Ensures words break to wrap within the container */
+    white-space: pre-wrap;
+    /* Ensure there is enough space for the cursor */
+    padding-right: 3px;
+    box-sizing: border-box;
+    /* Add other necessary styles here */
+}
+
+
+
 
 #nav-logo {
     width: 80px;
@@ -477,19 +580,23 @@ a-scene {
     z-index: 1000;
     animation: fadeIn 2s forwards 2s;
 }
+
 #submitButton {
-    display: none; /* Start as hidden */
+    display: none;
+    /* Start as hidden */
     text-decoration: none;
     color: black;
     padding: 5px;
-    background-color: #55f040;
-    transition: display 0.5s ease; /* Smooth transition for showing the button */
+    background-color: #F1F1F1;
+    transition: display 0.5s ease;
+    /* Smooth transition for showing the button */
     font-family: "Franklin Bold";
     font-size: 1.5vw;
     border: none;
     border-radius: 25px;
     transition: 1s;
 }
+
 #submitButton:hover {
     animation-name: blink;
     animation-duration: 0.5s;
@@ -499,11 +606,13 @@ a-scene {
 
 /* Contact Page */
 mark {
-  background-color: #55f040;  
+    background-color: #F1F1F1;
 }
+
 .h2 {
     line-height: 0;
 }
+
 .h3 {
     font-size: 3vw;
 }
@@ -511,6 +620,7 @@ mark {
 a {
     text-decoration: none;
 }
+
 #email {
     color: white;
 }
@@ -518,6 +628,7 @@ a {
 footer {
     background-color: black;
 }
+
 .footer_text a {
     text-decoration: none;
     color: white;
@@ -535,7 +646,7 @@ footer {
     justify-content: center;
     font-size: 2vw;
     border-bottom: 1px solid white;
-    
+
 }
 
 input[type="email"] {
@@ -586,80 +697,124 @@ input[type="email"] {
     #navbar a {
         font-size: 5vw;
     }
+
     #contact_navbar a {
         font-size: 3vw;
     }
+
     h2 {
-        font-size: 10vw;
+        font-size: 11vw;
     }
+
     h3 {
         font-size: 8vw;
     }
-    #quote {
-        font-size: 5vw;
+    
+
+    .typing-line {
+        font-size: 8.5vw;
     }
     .grid-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 0;
     }
 
     #sundays,
     .main-title,
+    #sub-section,
     .sub-title,
     .tagline,
-    #social {
+    address,
+    #social,
+    #end-tag,
+    #end-sub-title{
         display: none;
     }
 
     .mobile-title,
-.mobile_tagline,
-#mobile_sundays,
-#mobile_social {
-    display: grid;
-}
-    
+    .mobile_tagline,
+    #mobile_sundays,
+    #mobile_social,
+    #mobile-end-tag,
+#mobile_address,
+.mobile-dividing-tag {
+        display: grid;
+    }
+
     #mobile_sundays {
-         grid-row: 1;
+        grid-row: 1;
         font-size: 30vw;
         color: black;
         /* -webkit-text-stroke: 2px black; */
         animation: slideInLeft 3s forwards 2s;
     }
+
     #mobile_social {
         grid-row: 2;
         grid-column: 1;
-        font-size: 8vw;
-        padding: 5px;
-        font-family: "Merchant Copy";
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 10px;
+        font-size: 4vw;
+        font-family: "ITC American Typewriter";
         text-decoration: none;
         color: black;
         animation: slideInRight 2.5s forwards 2s;
     }
+
     #mobile_social a {
         text-decoration: none;
         color: black;
     }
+
     .mobile-title {
         grid-row: 3;
         font-size: 16vw;
         animation: slideInRight 2.5s forwards 2s;
     }
+
+    #mobile_address {
+        display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: "ITC American Typewriter";
+    text-transform: none;
+    padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 10px;
+    line-height: 1;
+    grid-row: 4;
+    font-size: 4vw;
+    box-sizing: border-box;
+    animation: slideInRight 3s forwards 2s;
+    }
+
     .mobile_tagline {
-        grid-row: 4;
+       
+        grid-row: 5;
         font-size: 16vw;
-        text-align: left ;
+        text-align: left;
         color: black;
         animation: slideInLeft 3s forwards 2s;
-        
+
     }
-    
+    #mobile-end-tag {
+         width: 71%;
+         grid-row: 6;
+         font-size: 16vw;
+         animation: cursorBlink 1s infinite,slideInLeft 3s forwards 2s;
+         border-right: 5px solid #56F040; /* Simulates the cursor */
+    }
+
     .h2 {
         font-size: 12vw;
         padding-top: 25px;
     }
+
     .h3 {
         font-size: 8vw;
     }
+
     #whats-happening {
         /* or any other color you prefer */
         padding-top: 2em;
@@ -682,15 +837,19 @@ input[type="email"] {
         padding-left: 30px;
         padding-right: 30px;
     }
+
     #emailInput {
         margin: 0;
         padding: 0;
         font-size: 8vw;
         text-align: center;
     }
-    .footer_text, #email {
+
+    .footer_text,
+    #email {
         font-size: 3vw;
     }
+
     .footer-bottom {
         font-size: 3.5vw;
     }
@@ -698,7 +857,7 @@ input[type="email"] {
 
 /* Responsive layout adjustments */
 @media (max-width: 1360px) {
-    
+
 
     .footer-content {
         flex-direction: column;
