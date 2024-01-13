@@ -57,7 +57,7 @@
 }
 
 @keyframes cursorBlink {
-    0%, 100% { border-right-color: #55f040; }
+    0%, 100% { border-right-color: #FEB602; }
     50% { border-right-color: transparent; }
 }
 
