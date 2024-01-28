@@ -265,7 +265,7 @@ header {
     /* Adjust based on your design */
     grid-row: 1;
     font-family: "Franklin Gothic";
-    font-size: 11vw;
+    font-size: 10vw;
     animation: slideInLeft 2s forwards 2s;
     color: black;
     box-sizing: border-box;
@@ -323,7 +323,7 @@ header {
     grid-column: 1 / 9;
     grid-row: 2;
     font-family: "Franklin Gothic";
-    font-size: 11vw;
+    font-size: 10vw;
     animation: slideInLeft 2.5s forwards 2s;
     box-sizing: border-box;
 }
@@ -333,7 +333,7 @@ header {
     /* Adjust based on your design */
     grid-row: 3;
     font-family: "Franklin Gothic";
-    font-size: 10.3vw;
+    font-size: 10vw;
     animation: slideInRight 2.5s forwards 2s;
     box-sizing: border-box;
     /* Adjust to match your design */
@@ -787,7 +787,7 @@ input[type="email"] {
 
     .mobile-title {
         grid-row: 3;
-        font-size: 16vw;
+        font-size: 15vw;
         animation: slideInRight 2.5s forwards 2s;
     }
 
