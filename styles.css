@@ -283,7 +283,7 @@ header {
     grid-column: 2 / 6;
     grid-row: 6;
     font-size: 1.8vw;
-    padding-left: 10px;
+    padding-left: 35px;
     box-sizing: border-box;
     animation: slideInRight 3s forwards 2s;
 }
