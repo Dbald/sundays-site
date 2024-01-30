@@ -708,6 +708,18 @@ input[type="email"] {
     animation-iteration-count: infinite;
     color: white;
 }
+/* Responsive layout adjustments */
+@media (max-width: 1360px) {
+    .address {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .address {
+        margin-top: 5px;
+    }
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -876,15 +888,3 @@ input[type="email"] {
     }
 }
 
-/* Responsive layout adjustments */
-@media (max-width: 1360px) {
-
-
-    .footer-content {
-        flex-direction: column;
-    }
-
-    .footer-section {
-        margin-bottom: 15px;
-    }
-}
