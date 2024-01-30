@@ -265,7 +265,7 @@ header {
     /* Adjust based on your design */
     grid-row: 1;
     font-family: "Franklin Gothic";
-    font-size: 10.08vw;
+    font-size: 9.95vw;
     animation: slideInLeft 2s forwards 2s;
     color: black;
     box-sizing: border-box;
@@ -276,7 +276,7 @@ header {
 
 .address {
     display: inline;
-    margin-top: 25px;
+    margin-top: 15px;
     font-family: "ITC American Typewriter";
     text-transform: none;
     line-height: 1.5;
@@ -322,7 +322,7 @@ header {
     grid-column: 1 / 9;
     grid-row: 2;
     font-family: "Franklin Gothic";
-    font-size: 10.08vw;
+    font-size: 9.95vw;
     animation: slideInLeft 2.5s forwards 2s;
     box-sizing: border-box;
 }
@@ -332,7 +332,7 @@ header {
     /* Adjust based on your design */
     grid-row: 3;
     font-family: "Franklin Gothic";
-    font-size: 10.08vw;
+    font-size: 9.95vw;
     animation: slideInRight 2.5s forwards 2s;
     box-sizing: border-box;
     /* Adjust to match your design */
@@ -344,7 +344,7 @@ header {
     /* Adjust based on your design */
     grid-row: 4;
     font-family: "Franklin Gothic";
-    font-size: 10.08vw;
+    font-size: 9.95vw;
     animation: slideInRight 2.5s forwards 2s;
     box-sizing: border-box;
 }
@@ -355,7 +355,7 @@ header {
     /* Span across all columns */
     grid-row: 5;
     /* This should match the font in your design */
-    font-size: 10.08vw;
+    font-size: 9.95vw;
     animation: slideInLeft 3s forwards 2s;
     box-sizing: border-box;
     /* Adjust to match your design */
@@ -365,7 +365,7 @@ header {
 #end-tag {
     grid-column: 1 / 2;
     grid-row: 6;
-    font-size: 10.08vw;
+    font-size: 9.95vw;
     box-sizing: border-box;
     animation: cursorBlink 1s infinite,slideInLeft 3s forwards 2s;
          border-right: 9px solid #56F040; /* Simulates the cursor */
@@ -718,6 +718,14 @@ input[type="email"] {
 @media (max-width: 900px) {
     .address {
         margin-top: 5px;
+    }
+    #sundays,
+    .main-title,
+    #sub-section,
+    .sub-title,
+    .tagline,
+    #end-tag {
+        font-size: 9.5vw;
     }
 }
 
